@@ -1,3 +1,0 @@
-<b>UserFeedbackConsole</b>
-
-<p>UserFeedback management and analytics console.</p>

@@ -1,8 +1,3 @@
-add_subdirectory(common)
 add_subdirectory(provider)
-add_subdirectory(server)
-add_subdirectory(testserver)
-if(Qt5Charts_FOUND)
-    add_subdirectory(console)
-    add_subdirectory(cli)
-endif()
+add_subdirectory(common)
+

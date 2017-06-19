@@ -46,7 +46,7 @@ endif()
 # try Qt5 first, and prefer that (if found), but only if not disabled via option
 if(NOT ENFORCE_QT4_BUILD)
     find_package(Qt5Core QUIET NO_MODULE)
-    find_package(QmlLint)
+
      # do not include in the Qt4 path, these calls find_package(Qt5)
     include(ECMQueryQmake)
     include(ECMGeneratePriFile)
@@ -101,10 +101,7 @@ if(FLEX_FOUND AND BISON_FOUND)
 endif()
 add_feature_info("Survey targeting expressions support" HAVE_SURVEY_TARGET_EXPRESSIONS "Requires flex and bison parser generators.")
 
-find_package(Php)
-set_package_properties(Php PROPERTIES URL "http://php.net" TYPE RECOMMENDED PURPOSE "Syntax checking of PHP server code.")
-find_package(PhpUnit)
-set_package_properties(PhpUnit PROPERTIES URL "http://phpunit.de" TYPE RECOMMENDED PURPOSE "Unit tests for PHP server code.")
+
 
 #
 # Actually build the stuff
@@ -113,11 +110,7 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 configure_file(config-userfeedback.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-userfeedback.h)
 
 add_subdirectory(src)
-add_subdirectory(autotests)
-if(Qt5Core_FOUND)
-    add_subdirectory(tests)
-    add_subdirectory(docs)
-endif()
+
 
 #
 # CMake package config file generation
